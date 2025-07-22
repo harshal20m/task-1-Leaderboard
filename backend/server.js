@@ -14,10 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect("mongodb://localhost:27017/leaderboard", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGO_URI);
 
 // Initialize default users
 const initializeUsers = async () => {
